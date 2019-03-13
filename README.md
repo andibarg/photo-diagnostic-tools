@@ -9,6 +9,7 @@ The following figure demonstrates some of the features:
 
 ### Suggestions for more features
 
+- More grids
 - Motion blur detection
 - Noise level rating
 - Red-eye detection
