@@ -4,20 +4,23 @@ import PIL.Image
 import PIL.ExifTags
 from scipy import ndimage
 import cv2
+import rawpy
 
 '''
 Class for image
-Specify path of jpg image.
+Specify path of jpg or raw image.
 Creates image array and
 extracts EXIF data.
 '''
 class picture:
     def __init__(self,path):
         # Load image
-        pic = PIL.Image.open(path)
-
-        # Convert to array
-        self.img = np.array(pic)
+        try:
+            with rawpy.imread(path) as raw:
+                self.img = raw.postprocess(rawpy.Params(use_camera_wb=True))
+        except:
+            pic = PIL.Image.open(path)
+            self.img = np.array(pic)
 
         # Extract Exif data
         try:
