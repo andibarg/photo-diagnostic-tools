@@ -17,4 +17,3 @@ Copyright free example picture by [Alexander Dummer](https://www.pexels.com/@ale
 - Motion blur detection
 - Noise level rating
 - Red-eye detection
-- Raw image support
